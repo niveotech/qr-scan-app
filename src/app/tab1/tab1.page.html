@@ -47,6 +47,10 @@
 
   </ion-list>
 
+  <div class="hint" *ngIf="!status">
+    <h1 class="hint-text">Tap the camera icon to start scan</h1>
+  </div>
+
   <ion-fab class="scan" (click)="scan()" vertical="bottom" horizontal="center">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
