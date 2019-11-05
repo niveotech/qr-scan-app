@@ -1,5 +1,7 @@
 {
   "name": "niveo-scanner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

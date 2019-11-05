@@ -1,9 +1,59 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h2>Show Flip Camera Button</h2>
+        <p>Display the Flip camera Button</p>
+      </ion-label>
+      <ion-toggle slot="end" [(ngModel)]="showFlipCameraButton" (ionChange)="toggleSetting('showFlipCameraButton',showFlipCameraButton?true:false)"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+      <h2>Show Torch Button</h2>
+        <p>Diplay the torch button<p>
+      </ion-label>
+      <ion-toggle slot="end" [(ngModel)]="showTorchButton" (ionChange)="toggleSetting('showTorchButton',showTorchButton?true:false)"></ion-toggle>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>
+        <h2>Turn on Torch</h2>
+      <p>
+        Start scan with the torch turned on.
+      </p>
+    </ion-label>
+      <ion-toggle slot="end" [(ngModel)]="torchOn" (ionChange)="toggleSetting('torchOn', torchOn?true:false)"></ion-toggle>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>
+        <h2>Animations</h2>
+          <p>
+            Enable or Disable Animations
+          </p>
+      </ion-label>
+      <ion-toggle slot="end" [(ngModel)]="disableAnimations" (ionChange)="toggleSetting('disableAnimations', disableAnimations?true:false)"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Beep Sound</h2>
+        <p>Play beep sound on successful scan</p>
+      </ion-label>
+      <ion-toggle slot="end" [(ngModel)]="disableSuccessBeep" (ionChange)="toggleSetting('disableSuccessBeep', disableSuccessBeep?false:true)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
