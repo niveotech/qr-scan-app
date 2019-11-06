@@ -53,6 +53,15 @@
       </ion-label>
       <ion-toggle slot="end" [(ngModel)]="disableSuccessBeep" (ionChange)="toggleSetting('disableSuccessBeep', disableSuccessBeep?false:true)"></ion-toggle>
     </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Dark mode</h2>
+        <p>Switch to Dark mode</p>
+      </ion-label>
+      <ion-toggle slot="end" (ionChange)="toggleDarkMode()"></ion-toggle>
+    </ion-item>
+
   </ion-list>
 
 

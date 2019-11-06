@@ -8,21 +8,44 @@ import { Storage } from '@ionic/storage';
 })
 
 export class Tab3Page {
-  
-  showFlipCameraButton : boolean;
+
+  showFlipCameraButton: boolean;
   showTorchButton: boolean;
   torchOn: boolean;
   disableAnimations: boolean;
   disableSuccessBeep: boolean;
-  
-  constructor(private settings: Storage) {}
 
-  toggleSetting(setting: string, event: any){
+  constructor(private settings: Storage) { }
+
+  toggleSetting(setting: string, event: any) {
     console.log("setting : " + event);
     this.settings.set(setting, event);
     this.settings.get(setting)
-      .then((value)=>{
+      .then((value) => {
         console.log("Setting: " + setting + " " + value);
-    })
+      })
   }
+
+  // Query for the toggle that is used to change between themes
+  // const toggle = document.querySelector('#themeToggle');
+
+  // Listen for the toggle check/uncheck to toggle the dark class on the <body>
+  toggleDarkMode(event){
+    document.body.classList.toggle('dark', event);
+  }
+
+// const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+// // Listen for changes to the prefers-color-scheme media query
+// prefersDark.addListener((e) => checkToggle(e.matches));
+
+// // Called when the app loads
+// function loadApp() {
+//   checkToggle(prefersDark.matches);
+// }
+
+// // Called by the media query to check/uncheck the toggle
+// function checkToggle(shouldCheck) {
+//   toggle.checked = shouldCheck;
+// }
 }
