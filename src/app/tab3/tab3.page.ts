@@ -14,6 +14,7 @@ export class Tab3Page {
   torchOn: boolean;
   disableAnimations: boolean;
   disableSuccessBeep: boolean;
+  dark: boolean;
 
   constructor(private settings: Storage) { }
 
@@ -30,8 +31,8 @@ export class Tab3Page {
   // const toggle = document.querySelector('#themeToggle');
 
   // Listen for the toggle check/uncheck to toggle the dark class on the <body>
-  toggleDarkMode(event){
-    document.body.classList.toggle('dark', event);
+  toggleDarkMode(dark){
+    document.body.classList.toggle('dark', this.dark);
   }
 
 // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
